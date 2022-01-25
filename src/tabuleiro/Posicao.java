@@ -26,6 +26,6 @@ public class Posicao {
     }
     @Override
     public String toString(){
-        return fileira + "," + coluna;
+        return fileira + ", " + coluna;
     }
 }
