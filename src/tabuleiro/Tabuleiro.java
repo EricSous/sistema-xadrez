@@ -2,23 +2,23 @@ package tabuleiro;
 
 public class Tabuleiro {
 
-    private int fileira;
+    private int linhas;
     private int colunas;
-    private Peca[][] pecas;
+    private Peca[][] peca;
 
-    public Tabuleiro(int fileira, int colunas) {
-        this.fileira = fileira;
+    public Tabuleiro(int linhas, int colunas) {
+        this.linhas = linhas;
         this.colunas = colunas;
-        pecas = new Peca[fileira][colunas];
+        peca = new Peca[linhas][colunas];
 
     }
 
-    public int getFileira() {
-        return fileira;
+    public int getLinhas() {
+        return linhas;
     }
 
-    public void setFileira(int fileira) {
-        this.fileira = fileira;
+    public void setLinhas(int linhas) {
+        this.linhas = linhas;
     }
 
     public int getColunas() {
@@ -27,6 +27,10 @@ public class Tabuleiro {
 
     public void setColunas(int colunas) {
         this.colunas = colunas;
+    }
+
+    public Peca peca(int linhas, int colunas){
+        return peca[linhas][colunas];
     }
 
 
