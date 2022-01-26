@@ -1,6 +1,11 @@
 package xadrez;
 
+import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
+import xadrez.pecas.Rei;
+import xadrez.pecas.Torre;
+
+import javax.swing.text.Position;
 
 public class PartidaDeXadrez {
 
@@ -8,6 +13,7 @@ public class PartidaDeXadrez {
 
     public PartidaDeXadrez() {
         tabuleiro = new Tabuleiro(8, 8);
+        configuracaoInicial();
     }
 
     public PecaDeXadrez[][] pecas(){
@@ -19,5 +25,15 @@ public class PartidaDeXadrez {
         }
         return pecaDeXadrez;
     }
+        private void configuracaoInicial(){
+        tabuleiro.colocarPeca(new Rei(tabuleiro,Color.BRANCO),new Posicao(7,4));
+        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.BRANCO),new Posicao(7,7));
+        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.BRANCO),new Posicao(7,0));
 
+
+        tabuleiro.colocarPeca(new Rei(tabuleiro,Color.PRETO),new Posicao(0,4));
+        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.PRETO),new Posicao(0,0));
+        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.PRETO),new Posicao(0,7));
+
+        }
 }
