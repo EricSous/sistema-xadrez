@@ -25,15 +25,19 @@ public class PartidaDeXadrez {
         }
         return pecaDeXadrez;
     }
+
+    private void trocaPeca(char coluna, int linha, PecaDeXadrez peca){
+        tabuleiro.colocarPeca(peca,new XadrezPosicao(coluna,linha).paraPosicao());
+    }
         private void configuracaoInicial(){
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Color.BRANCO),new Posicao(7,4));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.BRANCO),new Posicao(7,7));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.BRANCO),new Posicao(7,0));
+        trocaPeca('e', 1, new Rei(tabuleiro,Color.BRANCO));
+        trocaPeca('a', 1, new Torre(tabuleiro,Color.BRANCO));
+        trocaPeca('h', 1, new Torre(tabuleiro,Color.BRANCO));
 
 
-        tabuleiro.colocarPeca(new Rei(tabuleiro,Color.PRETO),new Posicao(0,4));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.PRETO),new Posicao(0,0));
-        tabuleiro.colocarPeca(new Torre(tabuleiro,Color.PRETO),new Posicao(0,7));
+        trocaPeca('e', 8, new Rei(tabuleiro,Color.PRETO));
+        trocaPeca('a', 8, new Torre(tabuleiro,Color.PRETO));
+        trocaPeca('h', 8, new Torre(tabuleiro,Color.PRETO));
 
         }
 }
